@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C0E063A-C99D-4A20-8807-6A8E1FCE8B7F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HairCare</RootNamespace>
+    <AssemblyName>HairCare</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <LangVersion>latest</LangVersion>
+    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ProductsTable.xaml.cs">
+      <DependentUpon>ProductsTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateProductDialog.xaml.cs">
+      <DependentUpon>CreateProductDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateProductWindow.xaml.cs">
+      <DependentUpon>CreateProductWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilterWindow.xaml.cs">
+      <DependentUpon>FilterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationsDialog.xaml.cs">
+      <DependentUpon>OperationsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SortingWindow.xaml.cs">
+      <DependentUpon>SortingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Models\ProductBase.cs" />
+    <Compile Include="Source\Models\ProductStat.cs" />
+    <Compile Include="Source\Models\Products\Conditioner.cs" />
+    <Compile Include="Source\Models\Products\Shampoo.cs" />
+    <Compile Include="Source\Models\Products\HairMask.cs" />
+    <Compile Include="Source\Models\Products\Factories\ConditionerFactory.cs" />
+    <Compile Include="Source\Models\Products\Factories\ShampooFactory.cs" />
+    <Compile Include="Source\Models\Products\Factories\HairMaskFactory.cs" />
+    <Compile Include="Source\Models\Products\Factories\HairOilFactory.cs" />
+    <Compile Include="Source\Models\Products\Factories\IProductFactory.cs" />
+    <Compile Include="Source\Models\Products\Factories\HeatProtectionFactory.cs" />
+    <Compile Include="Source\Models\Products\HairOil.cs" />
+    <Compile Include="Source\Models\Products\HeatProtection.cs" />
+    <Compile Include="Source\Models\Parts\HoldLevel.cs" />
+    <Compile Include="Source\Models\Parts\ProductFunction.cs" />
+    <Compile Include="Source\Models\Parts\ProductGeometry.cs" />
+    <Compile Include="Source\Models\Parts\ProductModel.cs" />
+    <Compile Include="Source\Models\Parts\Brand.cs" />
+    <Compile Include="Source\Models\Parts\ConfiguratorStat.cs" />
+    <Compile Include="Source\Models\Parts\ContainsSulfates.cs" />
+    <Compile Include="Source\Models\Parts\ContainsParabens.cs" />
+    <Compile Include="Source\Models\Parts\ContainsSilicones.cs" />
+    <Compile Include="Source\Models\Parts\Extracts.cs" />
+    <Compile Include="Source\Models\Parts\PackagingConfigurator.cs" />
+    <Compile Include="Source\Models\Parts\PackagingVolume.cs" />
+    <Compile Include="Source\Models\Parts\ShelfLife.cs" />
+    <Compile Include="Source\Models\Parts\PackagingType.cs" />
+    <Compile Include="Source\Models\Parts\TargetAudience.cs" />
+    <Compile Include="Source\Models\Parts\ApplicationMethod.cs" />
+    <Compile Include="Source\Models\Parts\ActiveIngredient.cs" />
+    <Compile Include="Source\Models\Parts\Texture.cs" />
+    <Compile Include="Source\Models\Parts\ScentIntensity.cs" />
+    <Compile Include="Source\Models\Parts\LeaveIn.cs" />
+    <Compile Include="Source\Models\Parts\ScentConfigurator.cs" />
+    <Compile Include="Source\Models\Parts\SeriesYear.cs" />
+    <Compile Include="Source\Models\Parts\AgeGroup.cs" />
+    <Compile Include="Source\Models\Parts\TravelSize.cs" />
+    <Compile Include="Source\Models\Parts\Effect.cs" />
+    <Compile Include="Source\Models\Parts\UVProtection.cs" />
+    <Compile Include="Source\Models\Parts\ItemsInSet.cs" />
+    <Compile Include="Source\Models\Utils.cs" />
+    <Compile Include="Source\Models\Parts\ProductType.cs" />
+    <Compile Include="Source\Models\Parts\HairType.cs" />
+    <Compile Include="Source\Models\Parts\Color.cs" />
+    <Compile Include="Source\Models\Parts\PackagingMaterial.cs" />
+    <Compile Include="Source\Models\Parts\VitaminComplex.cs" />
+    <Compile Include="Source\Models\Parts\Weight.cs" />
+    <Compile Include="Source\Models\Parts\DispenserType.cs" />
+    <Compile Include="Source\Repositories\ProductsRepository.cs" />
+    <Page Include="ProductsTable.xaml" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="CreateProductDialog.xaml" />
+    <Page Include="CreateProductWindow.xaml" />
+    <Page Include="FilterWindow.xaml" />
+    <Page Include="OperationsDialog.xaml" />
+    <Page Include="SortingWindow.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Assets\icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
